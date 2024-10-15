@@ -1,13 +1,14 @@
 #include "include.h"
 #define TOLERANCE 1e-10
 
+
 long double brent_method(long double (*f)(long double), long double a, long double b, long double tol) {
     long double fa = f(a);
     long double fb = f(b);
 
     if (fa * fb >= 0) {
         printf("Function does not change sign over the interval\n");
-        return -1; 
+        return -1;
     }
 
     long double c = a, fc = fa, s, fs;
@@ -18,14 +19,15 @@ long double brent_method(long double (*f)(long double), long double a, long doub
             s = a * fb * fc / ((fa - fb) * (fa - fc)) +
                 b * fa * fc / ((fb - fa) * (fb - fc)) +
                 c * fa * fb / ((fc - fa) * (fc - fb));
-        } else {
+        } 
+        else {
             s = b - fb * (b - a) / (fb - fa);
         }
 
-        if (!((s > (3 * a + b) / 4 && s < b) ||
-              (s < (3 * a + b) / 4 && s > a)) ||
-            (f_abs(s - b) >= f_abs(b - c) / 2) ||
-            (f_abs(b - c) < tol)) {
+        if (!((s > (3 * a + b) / 4 && s < b) || 
+              (s < (3 * a + b) / 4 && s > a)) || 
+            f_abs(s - b) >= f_abs(b - c) / 2 || 
+            f_abs(b - c) < tol) {
             s = (a + b) / 2; 
         }
 
@@ -41,13 +43,18 @@ long double brent_method(long double (*f)(long double), long double a, long doub
         }
 
         if (f_abs(fa) < f_abs(fb)) {
-            long double temp = a; a = b; b = temp;
-            temp = fa; fa = fb; fb = temp;
+            long double temp = a; 
+            a = b; 
+            b = temp;
+            temp = fa; 
+            fa = fb; 
+            fb = temp;
         }
     }
 
     return b; 
 }
+
 
 long double Z_wrapper(long double t) {
     return Z(t, 16);  
@@ -57,8 +64,8 @@ void refine_zeros(Zero *zeros, int zero_count) {
     for (int i = 0; i < zero_count; i++) {
         long double a = zeros[i].t - 0.001L; 
         long double b = zeros[i].t + 0.001L; 
-        zeros[i].t = brent_method(Z_wrapper, a, b, 1e-4);
-        zeros[i].z = fabsl(Z(zeros[i].t, 10));
+        zeros[i].t = brent_method(Z_wrapper, a, b, 1e-2);
+        zeros[i].z = fabsl(Z(zeros[i].t, 15));
     }
 }
 

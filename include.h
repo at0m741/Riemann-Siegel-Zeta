@@ -5,12 +5,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define LOWER 0
-#define UPPER 250
+#define LOWER 0.0
+#define UPPER 250.0
 #define NUMSAMPLES 180000
 #define EPSILON 1e-3
 #define REFINEMENT_STEPS 10
-#define MAX_TERMS 19
+#define MAX_TERMS 22
 
 
 typedef struct {

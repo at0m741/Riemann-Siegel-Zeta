@@ -9,10 +9,16 @@ int even(int n) {
     return ((n % 2 == 0) * 2 - 1);
 }
 
+
 long double theta(long double t) {
     const long double pi = 3.1415926535897932385L;
-    return (t / 2.0L * logl(t / 2.0L / pi) - t / 2.0L - pi / 8.0L + 1.0L / 48.0L / t + 7.0L / 5760.0L / t / t / t);
+    long double half_t = t / 2.0L;
+    long double inv_t = 1.0L / t;  
+    long double log_term = logl(half_t / pi);  
+
+    return (half_t * (log_term - 1.0L) - pi / 8.0L + inv_t / 48.0L + 7.0L * inv_t * inv_t * inv_t / 5760.0L);
 }
+
 
 long double evaluate_series(int n, long double z, const long double *coefficients, int length) {
     long double result = 0.0L;
