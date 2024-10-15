@@ -29,4 +29,6 @@ This formula provides an efficient approximation for large values of **t** in th
 \zeta \left( \frac{1}{2} + it \right).
 ```
 
+[https://arxiv.org/pdf/1811.01130](https://arxiv.org/pdf/1811.01130)
+
 @at0m741 and @yroussea
