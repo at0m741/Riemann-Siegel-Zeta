@@ -11,13 +11,8 @@
  * The function returns the value of the series at the point z.
 */
 
-// Define a tolerance for the zero location refinement
-
-
-#include <math.h>
 
 long double C(int n, long double z) {
-    // Store powers of z for lower-order terms
     long double z2 = z * z;
     long double z4 = z2 * z2;
     long double z6 = z4 * z2;
