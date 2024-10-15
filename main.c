@@ -32,7 +32,7 @@ int main() {
 
     #pragma omp parallel for private(t, s, sampleindex)	schedule(dynamic)
     for (sampleindex = 0; sampleindex <= samples; ++sampleindex) {
-        t = t1 + 1.0L * sampleindex / samples * (t2 - t1);
+        t = t1 + 0.8L * sampleindex / samples * (t2 - t1);
         s = f_abs(Z(t, 10));
         if (s < EPSILON && t > 1.0L) {
 			#pragma omp critical

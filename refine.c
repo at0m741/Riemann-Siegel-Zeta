@@ -58,7 +58,7 @@ void refine_zeros(Zero *zeros, int zero_count) {
         long double a = zeros[i].t - 0.001L; 
         long double b = zeros[i].t + 0.001L; 
         zeros[i].t = brent_method(Z_wrapper, a, b, 1e-4);
-        zeros[i].z = fabsl(Z(zeros[i].t, 7));
+        zeros[i].z = fabsl(Z(zeros[i].t, 10));
     }
 }
 

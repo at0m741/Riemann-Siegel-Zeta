@@ -6,10 +6,10 @@
 #include <stdlib.h>
 
 #define LOWER 0
-#define UPPER 150
+#define UPPER 250
 #define NUMSAMPLES 180000
 #define EPSILON 1e-3
-#define REFINEMENT_STEPS 20
+#define REFINEMENT_STEPS 10
 #define MAX_TERMS 19
 
 
