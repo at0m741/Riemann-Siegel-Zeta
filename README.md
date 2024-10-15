@@ -10,6 +10,6 @@ The **Riemann-Siegel formula** is used in this project to compute the values of 
 ### Riemann-Siegel Formula
 
 The Riemann-Siegel formula is an approximation for the zeta function on the critical line. For large values of `t`, it can be written as:
-```
+```math
 Z(t) \approx 2 \sum_{n=1}^{N} \frac{1}{n^{1/2}} \cos\left( \theta(t) - t \log(n) \right)
 ```
