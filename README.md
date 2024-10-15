@@ -24,5 +24,5 @@ The Riemann-Siegel theta function is defined as:
 
 This formula provides an efficient approximation for large values of **t** in the computation of 
 ```math
-\( \zeta \left( \frac{1}{2} + it \right) \).
+\zeta \left( \frac{1}{2} + it \right).
 ```
