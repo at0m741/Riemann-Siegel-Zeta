@@ -31,6 +31,8 @@ This formula provides an efficient approximation for large values of **t** in th
 
 [https://arxiv.org/pdf/1811.01130](https://arxiv.org/pdf/1811.01130)<br>
 [https://arxiv.org/pdf/2201.00342](https://arxiv.org/pdf/2201.00342)<br>
-[https://web.viu.ca/pughg/thesis.d/masters.thesis.pdf](https://web.viu.ca/pughg/thesis.d/masters.thesis.pdf)
+
+
+based on : [https://web.viu.ca/pughg/thesis.d/masters.thesis.pdf](https://web.viu.ca/pughg/thesis.d/masters.thesis.pdf)
 
 @at0m741 and @yroussea
