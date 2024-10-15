@@ -1,24 +1,19 @@
 NAME = zeta_zeros
 
-CC = clang
+CC = gcc
 
-SRCS = main.c \
-	   print_zeros.c \
-	   refine.c \
-	   riemann_siegel.c \
-	   utils.c
+SRCS = $(wildcard *.c) 
 
-CFLAGS = -O3 -mavx2 -mfma -Xpreprocessor -fopenmp -L/usr/local/Cellar/libomp/18.1.8/lib -lomp -g
-
+CFLAGS = -O3 -mavx2 -mfma -fopenmp -lm 
 OBJ = $(SRCS:.c=.o)
 
 .c.o:
-	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
+	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o) -lm
 
 all: $(NAME)
 	
 $(NAME): $(SRCS)
-	$(CC) $(CFLAGS) -o $(NAME) $(SRCS)
+	$(CC) $(CFLAGS) -o $(NAME) $(SRCS) -lm
 
 clean:
 	rm -f $(NAME)

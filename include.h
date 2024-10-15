@@ -4,14 +4,13 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <omp.h>
 
 #define LOWER 0
-#define UPPER 1000
-#define NUMSAMPLES 215000
-#define EPSILON 0.09E-2
-#define REFINEMENT_STEPS 19
-#define MAX_TERMS 26
+#define UPPER 150
+#define NUMSAMPLES 180000
+#define EPSILON 1e-3
+#define REFINEMENT_STEPS 20
+#define MAX_TERMS 19
 
 
 typedef struct {
